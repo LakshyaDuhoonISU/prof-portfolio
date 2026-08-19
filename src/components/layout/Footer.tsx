@@ -35,8 +35,6 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-4 font-[family-name:var(--font-mono)] text-xs text-[--color-text-muted]">
               <span>Portfolio {SITE_CONFIG.version}</span>
-              <span>•</span>
-              <span>Last Deploy: Today</span>
             </div>
           </div>
 
