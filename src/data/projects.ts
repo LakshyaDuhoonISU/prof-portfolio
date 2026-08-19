@@ -26,7 +26,7 @@ export const projects: Project[] = [
     description: 'An intelligent AI agent that automates business analysis tasks using natural language processing and machine learning to generate actionable insights from complex datasets.',
     problemStatement: 'Manual business analysis is time-consuming and prone to human bias. Organizations need faster, data-driven decision-making capabilities.',
     solution: 'Built an AI-powered agent that processes business data, generates reports, and provides strategic recommendations using LLMs and structured analysis pipelines.',
-    techStack: ['Python', 'LangChain', 'Gemini API', 'FastAPI', 'Pandas', 'React', 'TypeScript'],
+    techStack: ['Python', 'LangChain', 'NVIDIA: Nemotron 3 Ultra API', 'FastAPI', 'Pandas', 'React', 'TypeScript'],
     features: [
       'Natural language data querying',
       'Automated report generation',
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     description: 'A Security Operations Center platform that leverages AI for automated threat detection, incident response, and security monitoring across enterprise networks.',
     problemStatement: 'Security teams are overwhelmed by alert fatigue and lack the tools for rapid automated threat detection and response.',
     solution: 'Built an AI-powered SOC platform with real-time threat intelligence, automated playbooks, and machine learning-based anomaly detection.',
-    techStack: ['Python', 'FastAPI', 'React', 'TensorFlow', 'Elasticsearch', 'Docker', 'MITRE ATT&CK'],
+    techStack: ['Python', 'FastAPI', 'React', 'TensorFlow', 'Elasticsearch', 'Docker', 'MITRE ATT&CK','Gemma API'],
     features: [
       'Real-time threat detection',
       'Automated incident response playbooks',

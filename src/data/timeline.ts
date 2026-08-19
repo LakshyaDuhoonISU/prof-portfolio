@@ -10,6 +10,24 @@ export interface TimelineEvent {
 
 export const timelineEvents: TimelineEvent[] = [
   {
+    id: 'edu-ssc',
+    type: 'education',
+    title: 'Secondary School Certificate (SSC)',
+    organization: 'Delhi Public School, Panvel, Maharashtra',
+    date: 'May 2016 – May 2020',
+    description: 'Completed Secondary School Education.',
+    tags: ['Maths', 'English', 'Science', 'SST', 'Hindi', 'CS'],
+  },
+  {
+    id: 'edu-hsc',
+    type: 'education',
+    title: 'Higher Secondary Certificate (HSC)',
+    organization: 'Delhi Public School, Panvel, Maharashtra',
+    date: 'May 2021 – May 2023',
+    description: 'Completed Higher Secondary Education.',
+    tags: ['Maths', 'English', 'CS', 'Physics', 'Chemistry'],
+  },
+  {
     id: 'edu-isu',
     type: 'education',
     title: 'B.Tech in Computer Science',
@@ -27,22 +45,7 @@ export const timelineEvents: TimelineEvent[] = [
     description: 'Conducted strategic research and data analysis for media investment decisions. Contributed to market analysis reports and business intelligence dashboards.',
     tags: ['Data Analysis', 'Research', 'Strategy'],
   },
-  {
-    id: 'project-flashpay',
-    type: 'project',
-    title: 'FlashPay – Payment Integration',
-    date: 'December 2024',
-    description: 'Built a Razorpay payment integration project enabling seamless digital payment processing with secure transaction handling.',
-    tags: ['Razorpay', 'Node.js', 'Payments'],
-  },
-  {
-    id: 'project-fined',
-    type: 'project',
-    title: 'FinED – Financial Education Platform',
-    date: '2024',
-    description: 'Collaborative financial education platform designed to improve financial literacy through interactive learning modules and real-world simulations.',
-    tags: ['React', 'Node.js', 'Education'],
-  },
+
   {
     id: 'intern-colt',
     type: 'internship',

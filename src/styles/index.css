@@ -165,3 +165,8 @@ body {
   -webkit-mask-composite: xor;
   pointer-events: none;
 }
+
+/* Hide scroll-to-top button when modal is open */
+body.modal-open .scroll-to-top {
+  display: none !important;
+}

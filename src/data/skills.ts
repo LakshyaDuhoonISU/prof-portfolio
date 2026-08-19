@@ -1,4 +1,4 @@
-import { SiPython, SiTensorflow, SiScikitlearn, SiPandas, SiNumpy, SiNodedotjs, SiExpress, SiFastapi, SiMongodb, SiReact, SiTypescript, SiTailwindcss, SiHtml5, SiCss, SiJavascript, SiLinux, SiDocker, SiJenkins, SiSelenium, SiCypress, SiGit, SiGithub, SiWireshark } from 'react-icons/si';
+import { SiPython, SiTensorflow, SiScikitlearn, SiPandas, SiNumpy, SiNodedotjs, SiExpress, SiFastapi, SiMongodb, SiMysql, SiReact, SiTypescript, SiTailwindcss, SiHtml5, SiCss, SiJavascript, SiLinux, SiDocker, SiJenkins, SiSelenium, SiCypress, SiGit, SiGithub, SiWireshark } from 'react-icons/si';
 import { Shield, Brain, Server, Code, GitBranch } from 'lucide-react';
 import type { IconType } from 'react-icons';
 import type { LucideIcon } from 'lucide-react';
@@ -40,7 +40,7 @@ export const skillCategories: SkillCategory[] = [
       { name: 'FastAPI', icon: SiFastapi },
       { name: 'MongoDB', icon: SiMongodb },
       { name: 'REST APIs' },
-      { name: 'JWT' },
+      { name: 'MySQL', icon: SiMysql },
     ],
   },
   {

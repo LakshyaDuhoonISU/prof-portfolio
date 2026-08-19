@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, AlertTriangle, Lightbulb, Code2, Target, Wrench } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
@@ -11,6 +12,21 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
+    };
+  }, [isOpen]);
+
   if (!project) return null;
 
   const severityColors: Record<string, string> = {
@@ -42,7 +58,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             className="fixed inset-4 z-50 overflow-y-auto rounded-2xl border border-[--color-border] bg-[--color-bg-card]/95 backdrop-blur-xl md:inset-x-[10%] md:inset-y-[5%] lg:inset-x-[15%]"
           >
             {/* Header */}
-            <div className="sticky top-0 z-10 border-b border-[--color-border] bg-[--color-bg-card]/95 backdrop-blur-xl">
+            <div className="sticky top-0 z-10 border-b border-[--color-border] bg-[var(--color-bg-card)]">
               <div className="flex items-center justify-between p-5">
                 <div className="flex items-center gap-3">
                   <span className="font-[family-name:var(--font-mono)] text-xs text-[--color-text-muted]">
