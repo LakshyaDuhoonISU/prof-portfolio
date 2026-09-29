@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ShieldCheck, FolderKanban, Rocket, Layers, GitBranch, Briefcase } from 'lucide-react';
+import { GitBranch, FolderKanban, Rocket, Layers, Briefcase } from 'lucide-react';
+import { SiLeetcode } from 'react-icons/si';
 import { staggerContainer } from '../animations/variants';
 import SectionTitle from '../components/SectionTitle';
 import StatusCard from '../components/StatusCard';
@@ -7,10 +8,10 @@ import AnimatedCounter from '../components/AnimatedCounter';
 
 const dashboardCards = [
   {
-    icon: ShieldCheck,
-    label: 'Threat Level',
-    value: <span className="text-[--color-accent]">Normal</span>,
-    color: '#00FF88',
+    icon: GitBranch,
+    label: 'GitHub Repos',
+    value: <AnimatedCounter end={99} suffix="+"/>,
+    color: '#EF4444',
   },
   {
     icon: FolderKanban,
@@ -31,10 +32,10 @@ const dashboardCards = [
     color: '#F59E0B',
   },
   {
-    icon: GitBranch,
-    label: 'GitHub Repos',
-    value: <AnimatedCounter end={99} suffix="+"/>,
-    color: '#EF4444',
+    icon: SiLeetcode,
+    label: 'LeetCode Problems Solved',
+    value: <AnimatedCounter end={900} suffix="+"/>,
+    color: '#EAB308',
   },
   {
     icon: Briefcase,

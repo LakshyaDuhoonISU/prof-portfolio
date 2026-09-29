@@ -1,10 +1,9 @@
-import { type ReactNode } from 'react';
+import { type ReactNode, type ElementType } from 'react';
 import { motion } from 'framer-motion';
-import type { LucideIcon } from 'lucide-react';
 import { staggerItem } from '../animations/variants';
 
 interface StatusCardProps {
-  icon: LucideIcon;
+  icon: ElementType;
   label: string;
   value: ReactNode;
   color?: string;
