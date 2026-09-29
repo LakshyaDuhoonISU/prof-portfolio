@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, AlertTriangle, Lightbulb, Code2, Target, Wrench } from 'lucide-react';
+import { X, ExternalLink, AlertTriangle, Lightbulb, Code2, Target, Wrench, ChevronLeft, ChevronRight, ImageIcon } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
 import type { Project } from '../data/projects';
 import Button from './Button';
@@ -27,6 +27,11 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
     };
   }, [isOpen]);
 
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [project]);
+
   if (!project) return null;
 
   const severityColors: Record<string, string> = {
@@ -46,7 +51,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm"
+            className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm"
           />
 
           {/* Modal */}
@@ -55,7 +60,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="fixed inset-4 z-50 overflow-y-auto rounded-2xl border border-[--color-border] bg-[--color-bg-card]/95 backdrop-blur-xl md:inset-x-[10%] md:inset-y-[5%] lg:inset-x-[15%]"
+            className="fixed inset-x-4 bottom-4 top-24 z-[60] overflow-y-auto rounded-2xl border border-[--color-border] bg-[--color-bg-card]/95 backdrop-blur-xl md:bottom-[5%] md:top-28 md:inset-x-[10%] lg:inset-x-[15%]"
           >
             {/* Header */}
             <div className="sticky top-0 z-10 border-b border-[--color-border] bg-[var(--color-bg-card)]">
@@ -199,6 +204,63 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   </ul>
                 </section>
               </div>
+
+              {/* Screenshots */}
+              {project.screenshots && project.screenshots.length > 0 && (
+                <section className="border-t border-[--color-border] pt-6">
+                  <div className="mb-4 flex items-center gap-2">
+                    <ImageIcon size={16} className="text-[--color-accent]" />
+                    <h3 className="font-[family-name:var(--font-heading)] text-sm font-semibold uppercase tracking-wider text-[--color-text-primary]">
+                      Screenshots
+                    </h3>
+                  </div>
+                  <div className="group relative overflow-hidden rounded-xl border border-[--color-border] bg-black/50">
+                    <img 
+                      src={project.screenshots[currentImageIndex]} 
+                      alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                      className="h-auto max-h-[60vh] w-full object-contain"
+                    />
+                    
+                    {/* Navigation Buttons */}
+                    {project.screenshots.length > 1 && (
+                      <>
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setCurrentImageIndex((prev) => (prev === 0 ? project.screenshots!.length - 1 : prev - 1));
+                          }}
+                          className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 p-2 text-white opacity-0 transition-opacity hover:bg-black/80 group-hover:opacity-100"
+                        >
+                          <ChevronLeft size={20} />
+                        </button>
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setCurrentImageIndex((prev) => (prev === project.screenshots!.length - 1 ? 0 : prev + 1));
+                          }}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 p-2 text-white opacity-0 transition-opacity hover:bg-black/80 group-hover:opacity-100"
+                        >
+                          <ChevronRight size={20} />
+                        </button>
+                      </>
+                    )}
+                    
+                    {/* Dots */}
+                    <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5">
+                      {project.screenshots.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setCurrentImageIndex(idx);
+                          }}
+                          className={`h-1.5 rounded-full transition-all ${idx === currentImageIndex ? 'w-4 bg-[--color-accent]' : 'w-1.5 bg-white/50'}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </section>
+              )}
 
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-3 border-t border-[--color-border] pt-6">

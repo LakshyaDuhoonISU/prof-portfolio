@@ -14,6 +14,7 @@ export interface Project {
   futureImprovements: string[];
   github?: string;
   liveDemo?: string;
+  screenshots?: string[];
 }
 
 export const projects: Project[] = [
@@ -38,6 +39,7 @@ export const projects: Project[] = [
     learnings: ['Prompt engineering best practices', 'RAG pipeline optimization', 'Agent orchestration patterns'],
     futureImprovements: ['Real-time data streaming', 'Multi-agent collaboration', 'Custom model fine-tuning'],
     github: 'https://github.com/LakshyaDuhoonISU/AIBusinessAnalyst',
+    screenshots: Array.from({length: 7}, (_, i) => `/projects/ai_business_analyst/${i + 1}.png`),
   },
   {
     id: 'customer-onboarding',
@@ -60,6 +62,7 @@ export const projects: Project[] = [
     learnings: ['Gemini API integration', 'Advanced data analytics pipelines', 'PDF generation in Node.js'],
     futureImprovements: ['Predictive conversion modeling', 'More export formats', 'Real-time alert system'],
     github: 'https://github.com/LakshyaDuhoonISU/Onboarding_Intelligence_Platform',
+    screenshots: Array.from({length: 10}, (_, i) => `/projects/customer_onboarding_intelligence/${i + 1}.png`),
   },
   {
     id: 'ai-soc-platform',
@@ -82,6 +85,7 @@ export const projects: Project[] = [
     learnings: ['SOC operations workflows', 'Threat intelligence integration', 'SIEM architecture patterns'],
     futureImprovements: ['Threat hunting automation', 'SOAR integration', 'Federated learning for threat models'],
     github: 'https://github.com/LakshyaDuhoonISU/AI_SOC_Platform',
+    screenshots: Array.from({length: 7}, (_, i) => `/projects/ai_soc_platform/${i + 1}.png`),
   },
   {
     id: 'api-observability-platform',
@@ -104,6 +108,7 @@ export const projects: Project[] = [
     learnings: ['Time-series data modeling in MongoDB', 'Scalable background job processing', 'Advanced data visualization with Recharts'],
     futureImprovements: ['GraphQL and WebSocket monitoring support', 'Machine learning-based anomaly detection', 'Integrations with PagerDuty and Slack'],
     github: 'https://github.com/LakshyaDuhoonISU/API_Observability_Platform',
+    screenshots: Array.from({length: 6}, (_, i) => `/projects/api_observability_platform/${i + 1}.png`),
   },
   {
     id: 'flashpay',
@@ -126,6 +131,7 @@ export const projects: Project[] = [
     learnings: ['Razorpay API integration', 'Webhook processing', 'Payment gateway security best practices'],
     futureImprovements: ['Support for multiple payment gateways', 'Subscription management', 'Invoicing features'],
     github: 'https://github.com/LakshyaDuhoonISU/FlashPay',
+    screenshots: Array.from({length: 10}, (_, i) => `/projects/flashpay/${i + 1}.png`),
   },
   {
     id: 'quiz-management',
@@ -148,5 +154,6 @@ export const projects: Project[] = [
     learnings: ['Authentication and authorization patterns', 'Real-time data handling', 'Analytics implementation'],
     futureImprovements: ['AI-generated questions', 'Peer review system', 'Gamification features'],
     github: 'https://github.com/LakshyaDuhoonISU/flutter_quiz_app',
+    screenshots: Array.from({length: 6}, (_, i) => `/projects/quiz_app/${i + 1}.png`),
   },
 ];
