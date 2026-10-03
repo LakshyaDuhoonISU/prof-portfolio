@@ -65,10 +65,6 @@ export default function NotFound() {
                 <ArrowLeft size={14} />
                 Return to Dashboard
               </Button>
-              <Button onClick={() => navigate('/')} variant="ghost">
-                <Terminal size={14} />
-                Home
-              </Button>
             </div>
           </div>
         </div>

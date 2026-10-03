@@ -217,7 +217,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   <div className="group relative overflow-hidden rounded-xl border border-[--color-border] bg-black/50">
                     <img 
                       src={project.screenshots[currentImageIndex]} 
-                      alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                      alt={`Screenshot ${currentImageIndex + 1} showing the user interface of ${project.title}`}
                       className="h-auto max-h-[60vh] w-full object-contain"
                     />
                     

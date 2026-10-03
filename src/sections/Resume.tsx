@@ -38,7 +38,6 @@ export default function Resume() {
               {SITE_CONFIG.roles.join(' • ')}
             </p>
             <p className="mb-8 font-[family-name:var(--font-mono)] text-xs text-[--color-text-muted]">
-              Resume — Updated 2026
             </p>
 
             {/* Buttons */}

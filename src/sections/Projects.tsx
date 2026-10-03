@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { AlertTriangle, ExternalLink, ChevronRight } from 'lucide-react';
+import { ExternalLink, ChevronRight } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
 import { staggerContainer, staggerItem } from '../animations/variants';
 import SectionTitle from '../components/SectionTitle';
@@ -58,18 +58,7 @@ export default function Projects() {
                   <span className="font-[family-name:var(--font-mono)] text-xs text-[--color-text-muted]">
                     Incident #{project.incidentNumber}
                   </span>
-                  <div className="flex items-center gap-2">
-                    <span
-                      className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium"
-                      style={{
-                        backgroundColor: `${severityColors[project.severity]}15`,
-                        color: severityColors[project.severity],
-                      }}
-                    >
-                      <AlertTriangle size={10} />
-                      {project.severity}
-                    </span>
-                  </div>
+
                 </div>
 
                 {/* Title */}

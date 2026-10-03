@@ -4,12 +4,7 @@ import { CheckCircle2, ChevronDown, Terminal } from 'lucide-react';
 import { SITE_CONFIG } from '../constants/links';
 import TypingText from '../components/TypingText';
 
-const statusItems = [
-  '✓ Portfolio Loaded',
-  '✓ Projects Indexed',
-  '✓ Resume Ready',
-  '✓ Contact Channel Active',
-];
+
 
 const asciiArt = `
  ██████╗██╗   ██╗██████╗ ███████╗██████╗ ███████╗ ██████╗  ██████╗
@@ -22,23 +17,11 @@ const asciiArt = `
 
 export default function Hero() {
   const [showContent, setShowContent] = useState(false);
-  const [showStatus, setShowStatus] = useState(false);
-  const [visibleStatus, setVisibleStatus] = useState<number[]>([]);
 
   useEffect(() => {
     const t1 = setTimeout(() => setShowContent(true), 300);
-    const t2 = setTimeout(() => setShowStatus(true), 1200);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
+    return () => clearTimeout(t1);
   }, []);
-
-  useEffect(() => {
-    if (!showStatus) return;
-    statusItems.forEach((_, i) => {
-      setTimeout(() => {
-        setVisibleStatus((prev) => [...prev, i]);
-      }, i * 300);
-    });
-  }, [showStatus]);
 
   const scrollToDashboard = () => {
     document.getElementById('dashboard')?.scrollIntoView({ behavior: 'smooth' });
@@ -87,62 +70,41 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* System Status Panel */}
+        {/* Recruiter Brief Panel */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 20 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mx-auto mb-8 max-w-md overflow-hidden rounded-xl border border-[--color-border] bg-[--color-bg-card]/60 backdrop-blur-sm"
+          className="mx-auto mb-8 max-w-md overflow-hidden rounded-xl border border-[--color-border] bg-[--color-bg-card]/60 backdrop-blur-sm text-left"
         >
           <div className="border-b border-[--color-border] bg-[--color-bg-secondary]/50 px-4 py-2">
             <div className="flex items-center gap-2">
               <Terminal size={12} className="text-[--color-accent]" />
               <span className="font-[family-name:var(--font-mono)] text-xs text-[--color-text-muted]">
-                System Status
+                Recruiter Brief
               </span>
             </div>
           </div>
-          <div className="space-y-2 p-4">
-            {statusItems.map((item, i) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{
-                  opacity: visibleStatus.includes(i) ? 1 : 0,
-                  x: visibleStatus.includes(i) ? 0 : -10,
-                }}
-                className="flex items-center gap-2"
-              >
-                <CheckCircle2 size={14} className="text-[--color-accent]" />
-                <span className="font-[family-name:var(--font-mono)] text-xs text-[--color-text-muted]">
-                  {item.replace('✓ ', '')}
-                </span>
-              </motion.div>
-            ))}
+          <div className="space-y-4 p-5 text-sm leading-relaxed text-[--color-text-primary]">
+            <p>
+              B.Tech CSE student specializing in Cybersecurity, building AI-powered applications and secure full-stack systems.
+            </p>
+            <div>
+              <p className="mb-1 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-wider text-[--color-text-muted]">Previous Experience</p>
+              <p>AI & Data Analysis Intern @ Colt Technology Services</p>
+            </div>
+            <div>
+              <p className="mb-1 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-wider text-[--color-text-muted]">Focus</p>
+              <p className="font-medium text-[--color-accent-secondary]">AI • Software Engineering • Cybersecurity</p>
+            </div>
           </div>
-        </motion.div>
-
-        {/* Typing Line */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: showContent ? 1 : 0 }}
-          transition={{ duration: 0.3, delay: 2 }}
-          className="mb-8 font-[family-name:var(--font-mono)] text-sm text-[--color-text-muted]"
-        >
-          <span className="text-[--color-accent]">{'>'}</span>{' '}
-          <TypingText
-            text="Initializing Dashboard..."
-            speed={60}
-            startDelay={200}
-            shouldStart={showContent}
-          />
         </motion.div>
 
         {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 10 }}
-          transition={{ duration: 0.5, delay: 3.5 }}
+          transition={{ duration: 0.5, delay: 0.9 }}
         >
           <motion.button
             whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(0, 255, 136, 0.3)' }}
@@ -155,22 +117,6 @@ export default function Hero() {
           </motion.button>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
-        transition={{ delay: 4, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <div className="flex h-8 w-5 items-start justify-center rounded-full border border-[--color-border] p-1">
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="h-1.5 w-1.5 rounded-full bg-[--color-accent]"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }

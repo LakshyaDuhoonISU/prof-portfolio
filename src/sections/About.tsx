@@ -5,7 +5,7 @@ import TerminalWindow from '../components/TerminalWindow';
 
 const aboutData = [
   { key: 'Name', value: 'Lakshya Duhoon' },
-  { key: 'Role', value: 'AI Engineer / Full Stack Developer' },
+  { key: 'Role', value: 'AI Developer / Full Stack Developer' },
   { key: 'Mission', value: 'Building secure and intelligent software systems.' },
 ];
 

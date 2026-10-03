@@ -33,9 +33,6 @@ export default function Footer() {
                 System Status: <span className="text-[--color-accent]">Operational</span>
               </span>
             </div>
-            <div className="flex items-center gap-4 font-[family-name:var(--font-mono)] text-xs text-[--color-text-muted]">
-              <span>Portfolio {SITE_CONFIG.version}</span>
-            </div>
           </div>
 
           {/* Social Links */}

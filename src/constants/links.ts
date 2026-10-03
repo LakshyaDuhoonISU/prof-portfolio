@@ -11,8 +11,8 @@ export const SITE_CONFIG = {
   name: 'Lakshya Duhoon',
   title: 'CyberSOC Portfolio',
   version: 'v1.0',
-  roles: ['AI Engineer', 'Cybersecurity Enthusiast', 'Full Stack Developer'],
-  location: 'India',
+  roles: ['AI Developer', 'Cybersecurity Enthusiast', 'Full Stack Developer'],
+  location: 'Mumbai, Maharashtra, India',
 } as const;
 
 export const NAV_ITEMS = [
