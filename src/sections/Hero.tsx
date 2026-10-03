@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ChevronDown, Terminal } from 'lucide-react';
+import { ChevronDown, Terminal } from 'lucide-react';
 import { SITE_CONFIG } from '../constants/links';
-import TypingText from '../components/TypingText';
 
 
 

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { WifiOff, ArrowLeft, Terminal } from 'lucide-react';
+import { WifiOff, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 
